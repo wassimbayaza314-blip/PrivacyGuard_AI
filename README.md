@@ -1,1 +1,2 @@
-# PrivacyGuard_py
+PrivacyGuard AI est une solution innovante de cybersécurité conçue pour protéger les droits fondamentaux à la vie privée et à l'anonymat numérique. Le projet utilise l'injection de bruit stochastique et le contrôle adaptatif du jitter pour neutraliser les techniques de profilage comportemental.
+​En rendant les flux de données réels indiscernables du bruit de fond réseau, le système garantit que les habitudes numériques des utilisateurs (fréquence de connexion, patterns de saisie, horaires d'activité) ne peuvent être exploitées pour établir des profils comportementaux. Cette approche technique offre une défense active contre la surveillance de masse et renforce la sécurité des données dans les environnements IoT et mobiles.
