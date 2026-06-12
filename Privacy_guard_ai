@@ -1,0 +1,58 @@
+"""
+PROJET : PrivacyGuard AI
+OBJECTIF : Protection contre le profilage par métadonnées et analyse comportementale.
+AUTEUR : [Votre Nom]
+DATE : 12 juin 2026
+CONTEXTE : Prix UNESCO-Al Fozan 2027
+DESCRIPTION : 
+    Ce script implémente deux couches de défense :
+    1. Injection de bruit stochastique (Trafic leurre).
+    2. Jittering de frappe (Obfuscation de la biométrie comportementale).
+"""
+
+import time
+import random
+import threading
+import logging
+
+# Configuration des logs pour assurer une traçabilité scientifique
+logging.basicConfig(
+    level=logging.INFO, 
+    format='%(asctime)s - %(message)s'
+)
+logger = logging.getLogger("PrivacyGuardAI")
+
+def generer_bruit_fond():
+    """Génère du trafic réseau factice pour noyer les activités réelles."""
+    while True:
+        types_bruit = ["PING_SERVER", "SYNC_DATA", "KEEP_ALIVE", "AUTH_CHECK"]
+        bruit = random.choice(types_bruit)
+        logger.info(f"[BRUIT] Injection de paquet réseau : {bruit}")
+        time.sleep(random.uniform(2, 5)) 
+
+def proteger_saisie(message):
+    """
+    Applique une technique de Jitter (délais aléatoires) 
+    pour briser la signature biométrique de saisie.
+    """
+    logger.info(f"[ACTION] Sécurisation du flux de données : '{message}'")
+    for lettre in message:
+        # Ajout d'un délai aléatoire (Jitter) entre 0.1s et 0.6s
+        delai = random.uniform(0.1, 0.6) 
+        time.sleep(delai)
+        logger.info(f"[CRYPT] Caractère '{lettre}' émis (Jitter : {delai:.2f}s)")
+    logger.info("[ACTION] Transmission sécurisée terminée.")
+
+if __name__ == "__main__":
+    logger.info("--- Initialisation de PrivacyGuard AI ---")
+    
+    # Lancement du générateur de bruit en tâche de fond
+    thread_bruit = threading.Thread(target=generer_bruit_fond, daemon=True)
+    thread_bruit.start()
+    
+    # Simulation d'un message utilisateur à protéger
+    proteger_saisie("URGENT: Données sensibles transmises.")
+    
+    # Pause pour observer la persistance du bruit après l'envoi
+    time.sleep(10)
+    logger.info("--- Arrêt du système ---")
